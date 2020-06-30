@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <link 
+    href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff"
+    rel = "stylesheet"
+    />
+    <title>nutu clone</title>
+    <script src = "https://kit.fontawesome.com/2d323a629b.js" crossorigin="anonymous">
+    </script>
+    <style>
+      :root{
+        --white-color: white;
+        --black-color: #140a00;
+        --blue-color: #045fd4;
+        --red-color: #ff0000;
+        --greydark-color: #909090;
+        --greylight-color: #e0e0e0;
+
+        --padding :12px;
+        --avatar-size: 36px;
+
+        --font-large :18px;
+        --font-medigum : 14px;
+        --font-small:12px;
+        --font-micro :10px;
+      }
+
+      *{
+        padding :0;
+        margin :0;
+        box-sizing: border-box;
+      }
+
+      body{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      ul{
+        list-style: none;
+      }
+
+      button,
+      button:focus{
+        border: none;
+        cursor:pointer;
+        outline: none;
+      }
+
+      header{
+        display: flex;
+        justify-content: space-between;
+        padding: var(--padding);
+        background-color: var(--black-color);
+        color:var(--white-color);
+      }
+
+      header .logo{
+        font-size : var(--font-large);
+      }
+
+      header .logo i {
+        color:var(--red-color);
+      }
+
+      header .icon .fa-search{
+        margin-right: var(--padding);
+      }
+
+      .player{
+        position: sticky;
+        top: 0; 
+        text-align: center;
+        background-color: var(--black-color);
+      }
+
+      .player img{
+        width:100%;
+        height: 100%;
+        max-width: 1000px;
+      }
+
+      body > .info{
+        padding: var(--padding);
+      }
+
+      .info .metadata .hashtags{
+        display: flex;
+        font-size: var(--font-small);
+        color: var(--blue-color);
+      }
+
+      .info .metadata .hashtags li{
+        margin-right: var(--padding);
+      }
+
+      .info .metadata .titleandbutton{
+        display: flex;
+      }
+
+      .info .metadata .titleandbutton .title{
+        font-size: var(--font-medium);
+        margin-right: var(--padding);
+        display :-webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+
+      .info .metadata .titleandbutton .morebtn{
+        height: 100%;
+      }
+
+      .info .metadata .views{
+        font-size : var(--font-small);
+        color:var(--greydark-color);
+      }
+
+      .info .actions {
+        display: flex;
+        justify-content: space-around;
+        margin : var(--padding) 0;
+      }
+
+      .info .actions button{
+        display: flex;
+        flex-direction: column;
+        font-size: var(--font-small);
+        color:var(--greydark-color);
+      }
+
+      .info .actions button i{
+        margin: 0 auto;
+        margin-bottom: calc(var(--padding) / 2);
+        font-size: 16px;
+      }
+
+      .info .actions button i .active{
+        color:var(--blue-color);
+      }
+
+      .info .channel{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--greylight-color);
+        border-bottom: 1px solid var(--greylight-color);
+      }
+
+      .channel .metadata{
+        display:flex;
+        align-items: center;
+      }
+
+      .channel.metadata.info{
+        display:flex;
+        flex-direction: column;
+      }
+
+      .channel .metadata img{
+        width:var(--avatar-size);
+        height:var(--avatar-size);
+        border-radius: 50%;
+      }
+
+      .channel .metadata .info .name{
+        font-size: var(--font-medigum);
+        color:var(--greydark-color);
+      }
+
+      .channel .metadata .info .subscribers{
+        text-transform: uppercase;
+        color: var(--red-color);
+        font-size : var(--font-medigum);
+      }
+
+      .upnext{
+        padding :0 var(--padding);
+      }
+
+      .upnext > .title{
+        font-size: var(--font-medigum);
+        color:var(--greydark-color);
+        margin-bottom: calc(var(--padding) / 2);
+      }
+
+      .upnext .item{
+        display:flex;
+        margin-top: var(--padding);
+      }
+
+      .upnext .item .img{
+        flex: 1 1 35%;
+        margin-right: var(--padding);
+      }
+
+      .upnext .item .img img{
+        width :100%;
+      }
+
+      .upnext .item .info{
+        flex: 1 1 60%;
+      }
+
+      .upnext .item .morebtn{
+        flex: 1 1 5%;
+      }
+
+      .upnext .item.info{
+        display:flex;
+        flex-direction: column;
+      }
+
+      .upnext .item.info .title{
+        font-size: var(--font-small);
+      }
+
+      .upnext .item .info .name,
+      .upnext .item .info .views{
+        font-size :var(--font-micro);
+        color:var(--greydark-color);
+      }
+
+      .infoandupnext{
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media screen and (min-width:768px){
+        .infoandupnext{
+          flex-direction: row;
+          margin :var(--padding) 0;
+        }
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <header> 
+      <div class = "logo">
+        <i class = "fab fa-youtube"></i>
+        <span class = "title">tububu</span>
+      </div>
+      <div class = "icon">
+        <i class = "fas fa-search"></i>
+        <i class = "fas fa-ellipsis-v"></i>
+      </div>
+    </header>
+
+    <section class ="player">
+      <img src = "https://miro.medium.com/proxy/1*JGRkEO2L7lKjowzhr4JHrg.jpeg"/>
+    </section>
+
+    <div class = "infoandupnext">
+      <section class ="info">
+        <div class = "metadata">
+          <ul class = "hashtags">
+            <li>#sexking</li>
+            <li>#kingisback</li>
+            <li>#backtothefuture</li>
+          </ul>
+          <div class = "titleandbutton">
+            <span class = "title">
+              if you constantly give favors for someone, they begin to think they are entitled it.
+            </span>
+            <button class = "morebtn"><i class = "fas fa-caret-down"></i>
+            </button>
+          </div>
+          <span claoss = "views">1M views 1 month ago</span>
+        </div>
+        <ul class = "actions">
+          <li><button><i class = "fas fa-thumbs-up"></i><span>1K</span></button></li>
+          <li><button><i class = "fas fa-thumbs-down"></i><span>0</span></button></li>
+          <li><button><i class = "fas fa-share"></i><span>Share</span></button></li>
+          <li><button><i class = "fas fa-plus"></i><span>Save</span></button></li>
+          <li><button><i class = "fab fa-font-awesome-flag"></i><span>Report</span></button></li>
+        </ul>
+        <div class = "channel">
+          <div class = "metadata">
+            <img src = "https://www.lifespan.io/wp-content/uploads/2017/06/shutterstock_127785641.jpg" alt = ""/>
+            <span class = "name"></span>
+            <span class = "subscribers"></span>
+          </div>
+          <button class = "subscribe">subscribe</button>
+            
+          </div>
+        </div>
+      </section>
+  
+      <section class ="upnext">
+        <span class = "title">Up next</span>
+        <ul>
+          <li class = "item">
+            <div class = "img"><img src = "https://gpsaediboard.files.wordpress.com/2019/11/success-man-sun-victory_shutterstock.jpg?w=656&h=300&crop=1" alt = ""/></div>
+            <div class = "info">
+              <span class = "title">11111111111111111111111111111111111111111111111111111111</span>
+              <span class = "name">my dream is...</span>
+              <span class = "views">82K</span>
+            </div>
+            <button class ="morebtn"><i class = "fas fa-ellipsis-v"></i></button>
+          </li>
+          <li class = "item">
+            <div class = "img"><img src = "https://i.ytimg.com/vi/TiQ7aug-GwI/maxresdefault.jpg" alt = ""/></div>
+            <div class = "info">
+              <span class = "title">22222222222222222222222222222222222222222222222222222222</span>
+              <span class = "name">my dream is...</span>
+              <span class = "views">8112K</span>
+            </div>
+            <button class ="morebtn"><i class = "fas fa-ellipsis-v"></i></button>
+          </li>
+          <li class = "item">
+            <div class = "img"><img src = "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fbatman-arkham-city%2FEGS_WB_Batman_Arkham_City_G1_1920x1080_19_0911-1920x1080-24a7b872daf28b18cfdac0ae92e656964786a0ce.jpg?h=1080&resize=1&w=1920" alt = ""/></div>
+            <div class = "info">
+              <span class = "title">33333333333333333333333333333333333333333333333333333333333</span>
+              <span class = "name">my dream is...</span>
+              <span class = "views">2K</span>
+            </div>
+            <button class ="morebtn"><i class = "fas fa-ellipsis-v"></i></button>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  </body>
+</html>
