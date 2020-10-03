@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>button test</title>
+  <meta charset="utf8">
+  <style>
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color:white;
+      text-align: center;
+    }
+    .menu li {
+      display: inline-block;
+    }
+    .menu li a {
+      display: block;
+      color:black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .menu a:hover:not(.active) {
+      background-color: #6799FF;
+      color:white;
+    }
+    .active {
+      background-color: #6799FF;
+      color:white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul class = "menu">
+      <li><a class="active" href="/home">게임하기</a></li>
+      <li><a href="/rank">랭킹</a></li>
+      <li><a href="/description">게임설명</a></li>
+      <li><a href="/community">커뮤니티</a></li>
+    </ul>
+  </div>
+</body>
+
+</html>
