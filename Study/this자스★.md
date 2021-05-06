@@ -83,14 +83,23 @@ person.getinc(); 	// 78955632560
 
 #### 이벤트핸들러 안에서 this
 
-이건 HTML을 가리킨다. </br>
+이건 HTML 태그 자기 자신을 가리킨다. </br>
 
 ```javascript
 const btn = document.querySelector('#send');
-btn.addEventListener('click', () =>{
-	console.log(btn);		// #send
+btn.addEventListener('click', function() {
+	console.log(this);		// #send
 });
 ```
+
+만약 이벤트 리스터 안에서 콜백함수를 화살표 함수로 설정할경우 window 객체를 가리킨다. </br>
+
+```javascript
+const btn = document.querySelector('#send');
+btn.addEventListener('click', () => {
+	console.log(this);		// window
+});
+``` 
 
 #### 생성자 안에서 this
 
@@ -105,6 +114,7 @@ console.log(Lee.name);		// lee
 console.log(Park.name);		// park
 ```
 
+new는 내부적으로 빈 객체를 생성 빈객체에 프로토타입 프로퍼티를 할당한다. </br>
 하지만 new 키워드를 빼면 일반 메소드 호출과 같기 때문에 this는 window객체!!! </br>
 
 #### 명시적 바인딩을 한 this
