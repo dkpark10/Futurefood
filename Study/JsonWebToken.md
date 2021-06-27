@@ -26,7 +26,7 @@ http 프로토콜은 이전에 통신했던 데이터를 저장하지 않기 때
 4. 브라우저는 토큰을 저장해두고 서버에 요청할 때 토큰을 같이 전달.
 5. 서버는 토큰검증 서비스 응답
 
-[https://velopert.com/wp-content/uploads/2016/12/token-diagram.png](https://velopert.com/wp-content/uploads/2016/12/token-diagram.png)
+![https://velopert.com/wp-content/uploads/2016/12/token-diagram.png](https://velopert.com/wp-content/uploads/2016/12/token-diagram.png)
 
 서버에서 토큰을 전달할 때 HTTP헤더의 토큰값을 포함시켜 전달한다.
 
@@ -39,7 +39,7 @@ jwt는 토큰에 대한 기본정보, 내용, 검증증명을 포함하고 있�
 
 다음과 같이 헤더, 내용, 서명으로 나누어져 있다.
 
-[https://velopert.com/wp-content/uploads/2016/12/jwt.png](https://velopert.com/wp-content/uploads/2016/12/jwt.png)
+![https://velopert.com/wp-content/uploads/2016/12/jwt.png](https://velopert.com/wp-content/uploads/2016/12/jwt.png)
 
 ### 헤더1
 
